@@ -183,7 +183,9 @@ section { padding: 104px 0; }
 .pmii p { margin: 0 0 6px; font-size: 14.5px; }
 .gallery { display: grid; gap: 16px; padding: 24px; border-top: 1px solid var(--cp-border); background: var(--cp-bg-elevated); }
 .gallery.g2 { grid-template-columns: 1fr 1fr; }
-.gallery.g3 { grid-template-columns: 1fr 0.9fr 1.1fr; }
+.gallery.g3 { grid-template-columns: 1.25fr 1fr; }
+.gallery.g3 figure:nth-child(3) { grid-column: 1 / -1; }
+.gallery.g3 figure:nth-child(3) .conjoint { max-width: 760px; }
 .gallery figure { margin: 0; background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 0.625rem; overflow: hidden; display: flex; flex-direction: column; }
 .gallery figure img { width: 100%; object-fit: contain; background: var(--cp-surface); flex: 1; }
 .gallery figcaption { font-size: 12.5px; color: var(--cp-text-muted); padding: 10px 14px; border-top: 1px solid var(--cp-border); }
@@ -347,7 +349,7 @@ section { padding: 104px 0; }
 .pmii .label { margin-bottom: 6px; }
 .pmii li { font-size: 14px; margin-bottom: 4px; line-height: 1.4; }
 .gallery { padding: 14px 16px; gap: 12px; }
-.gallery figure img { max-height: 175px; }
+.gallery figure img { max-height: 300px; cursor: zoom-in; }
 .gallery figcaption { padding: 7px 12px; font-size: 12px; }
 .conjoint th, .conjoint td { padding: 5px 8px; }
 .tile { min-height: 52px !important; padding: 8px 10px; }
@@ -357,6 +359,11 @@ section { padding: 104px 0; }
 .mock { gap: 4px; padding: 10px 12px; }
 .sch-head { padding: 10px 14px 0; }
 @media screen and (min-width: 961px) { .case { scroll-margin-top: 72px; } }
+
+
+.lightbox { position: fixed; inset: 0; z-index: 100; background: var(--cp-overlay); display: none; align-items: center; justify-content: center; padding: 32px; cursor: zoom-out; }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 0.625rem; box-shadow: var(--cp-shadow); background: var(--cp-surface); }
 
 /* Motion */
 .up { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
@@ -433,7 +440,7 @@ section { padding: 104px 0; }
   .group { display: none; }
   .approach { padding-bottom: 0; }
   #work .head { margin-bottom: 0; }
-  .gallery figure img { max-height: 250px; }
+  .gallery figure img { max-height: 300px; }
   .feature .shot { min-height: 260px; }
   .fut-grid .fcard .thumb { aspect-ratio: 16 / 7; }
   .screen-only { display: none; }
@@ -873,8 +880,13 @@ section { padding: 104px 0; }
   </div>
 </section>
 
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Enlarged image"><img alt=""></div>
 <script>
   (() => {
+    const lb = document.getElementById("lightbox");
+    document.querySelectorAll(".gallery figure img").forEach((im) => im.addEventListener("click", () => { lb.querySelector("img").src = im.src; lb.querySelector("img").alt = im.alt; lb.classList.add("open"); }));
+    lb.addEventListener("click", () => lb.classList.remove("open"));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") lb.classList.remove("open"); });
     document.getElementById("themeToggle").addEventListener("click", () => {
       const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", next);
