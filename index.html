@@ -365,6 +365,10 @@ section { padding: 104px 0; }
 .lightbox.open { display: flex; }
 .lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 0.625rem; box-shadow: var(--cp-shadow); background: var(--cp-surface); }
 
+.iiex-quote { margin: 22px 0 0; padding: 4px 0 4px 18px; border-left: 3px solid var(--cp-accent); font-size: 20px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.35; }
+.tension { border-radius: 0.625rem; padding: 14px 16px; background: var(--cp-accent-soft); font-size: 13.5px; color: var(--cp-text-muted); line-height: 1.45; }
+.tension b { display: block; color: var(--cp-text); font-size: 16px; letter-spacing: -0.01em; margin-bottom: 4px; }
+.tension b span { color: var(--cp-accent); font-weight: 600; }
 /* Motion */
 .up { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
 .up.in { opacity: 1; transform: none; }
@@ -445,7 +449,6 @@ section { padding: 104px 0; }
   .fut-grid .fcard .thumb { aspect-ratio: 16 / 7; }
   .screen-only { display: none; }
   .print-inline { display: inline; }
-  .iiex-insights { display: none !important; }
   .schematic { break-inside: avoid; }
   .tilemap .tile { min-height: 48px; }
   .writing-label { break-before: page; }
@@ -768,24 +771,25 @@ section { padding: 104px 0; }
         <div class="txt">
           <div class="label">Talk · IIEX West 2026 · San Francisco · October 2026</div>
           <h3>From Hype to Human</h3>
-          <p>A New Horizon for AI and Business. Co-presented with Space Doctors. AI efficiency gets business to a frontier, but no further. Moving past it means questioning the assumptions AI is being added to.</p>
+          <p>A New Horizon for AI and Business. Co-presented with Julius Colwyn of Space Doctors. When we scale old business assumptions with AI, value starts to distort. The opportunity is to find the new value AI opens up, and put human value at the center of how business works.</p>
         </div>
       </div>
       <div class="right">
         <table class="assump">
-          <tr><th>Assumption</th><th>With AI</th><th>What if…</th></tr>
-          <tr><td>Junior staff learn by doing simpler tasks.</td><td>AI absorbs first drafts and routine analysis, so juniors lose practice.</td><td>Junior work were designed for learning?</td></tr>
-          <tr><td>Consensus produces better decisions.</td><td>Similar AI tools push teams toward similar, safe answers.</td><td>AI exposed disagreement, and people made the distinctive calls?</td></tr>
-          <tr><td>Creativity is valuable in every role.</td><td>Idea volume can be mistaken for originality.</td><td>Creativity were judged by framing and selection, not volume?</td></tr>
+          <tr><th>Assumption</th><th>Scaled with AI</th><th>What if…</th></tr>
+          <tr><td>Everyone needs a clearly defined role.</td><td>Roles blur: engineers design, designers code. Output rises, quality stagnates.</td><td>Roles were defined around judgement and accountability, with shared quality standards?</td></tr>
+          <tr><td>Senior employees will mentor juniors.</td><td>As AI takes junior work, there is less reason to delegate and teach.</td><td>Juniors were tasked with reimagining how AI brings new value?</td></tr>
+          <tr><td>Removing human effort improves the experience.</td><td>AI removes tedium, but also agency, mastery and participation.</td><td>Products told unwanted effort apart from effort people value?</td></tr>
         </table>
-        <div class="iiex-insights" hidden>
-        <div class="label" style="margin-bottom:8px">Key insights from the talk</div>
+        <div class="iiex-insights">
+        <div class="label" style="margin-bottom:8px">Three tensions to resolve</div>
         <div class="ph-row">
-          <div class="ph"><b>[Placeholder] Insight 1</b>Add takeaway</div>
-          <div class="ph"><b>[Placeholder] Insight 2</b>Add takeaway</div>
-          <div class="ph"><b>[Placeholder] Insight 3</b>Add takeaway</div>
+          <div class="tension"><b>Output <span>vs.</span> Outcome</b>Measure success by human value, not volume.</div>
+          <div class="tension"><b>Product <span>vs.</span> Process</b>Treat divergent, distinctive approaches as the source of value.</div>
+          <div class="tension"><b>Scale <span>vs.</span> Skill</b>Keep the talent pipeline that delivers on the technology.</div>
         </div>
         </div>
+        <blockquote class="iiex-quote">“Prioritizing speed drives convergence. The new value comes from divergence.”</blockquote>
       </div>
     </div>
 
