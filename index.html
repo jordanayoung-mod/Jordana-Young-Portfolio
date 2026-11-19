@@ -379,6 +379,26 @@ section { padding: 104px 0; }
 .mgroup { margin-bottom: 12px; }
 .mgroup .mg { font-size: 12.5px; font-weight: 600; color: var(--cp-text-muted); margin-bottom: 6px; }
 
+
+/* Featured work */
+.featured { padding: 8px 0 24px; }
+.stars { display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; margin-top: 14px; }
+.star { display: flex; flex-direction: column; background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px; padding: 26px 28px; transition: transform .25s ease, box-shadow .25s ease; }
+.star:hover { transform: translateY(-3px); box-shadow: var(--cp-shadow); }
+.star.big { grid-row: 1 / 3; background: var(--cp-accent); color: var(--cp-accent-fg); border-color: var(--cp-accent); padding: 34px 36px; }
+.star.dark { background: var(--cp-text); color: var(--cp-bg); border-color: var(--cp-text); }
+.star .snum { font-size: 56px; font-weight: 700; letter-spacing: -0.05em; line-height: .95; color: var(--cp-accent); }
+.star.big .snum { font-size: clamp(96px, 11vw, 150px); color: var(--cp-accent-fg); }
+.star.dark .snum { color: var(--cp-accent); }
+.star .slbl { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin: 6px 0 14px; opacity: .8; }
+.star h3 { font-size: 24px; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 8px; }
+.star.big h3 { font-size: clamp(28px, 3vw, 38px); margin-top: auto; }
+.star p { margin: 0 0 14px; font-size: 15px; line-height: 1.5; opacity: .88; }
+.star.big p { font-size: 17px; max-width: 520px; }
+.star .go { margin-top: auto; font-size: 14px; font-weight: 600; }
+.star.big .go, .star.dark .go { color: inherit; }
+.star:not(.big):not(.dark) .go { color: var(--cp-accent); }
+
 /* Motion */
 .up { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
 .up.in { opacity: 1; transform: none; }
@@ -417,6 +437,8 @@ section { padding: 104px 0; }
   .case-top { grid-template-columns: 1fr; }
   .case-title { padding: 26px 24px 20px; }
   .demo { grid-template-columns: 1fr; grid-template-areas: "video" "cap"; }
+  .stars { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .star.big { grid-row: auto; }
   .gallery.g2, .gallery.g3, .tool-grid, .fut-grid, .ph-row { grid-template-columns: 1fr; }
   .job { grid-template-columns: 1fr; gap: 2px; }
 }
@@ -462,6 +484,8 @@ section { padding: 104px 0; }
   .schematic { break-inside: avoid; }
   .tilemap .tile { min-height: 48px; }
   .writing-label { break-before: page; }
+  .featured { padding: 0 0 12px; }
+  .star { break-inside: avoid; }
   .page-break { break-before: page; }
   .flow { gap: 6px; padding: 16px 20px; }
   .flow div { font-size: 13px; }
@@ -479,6 +503,7 @@ section { padding: 104px 0; }
   <div class="wrap">
     <a class="brand" href="#top"><span class="mono">JY</span>Jordana Young</a>
     <ul>
+      <li><a href="#featured">Featured</a></li>
       <li><a href="#work">Case studies</a></li>
       <li><a href="#tools">Research ops</a></li>
       <li><a href="#outreach">Outreach &amp; training</a></li>
@@ -516,6 +541,35 @@ section { padding: 104px 0; }
   </div>
 </header>
 
+<section id="featured" class="featured">
+  <div class="wrap">
+    <div class="label accent">Featured work</div>
+    <div class="stars">
+      <a class="star big up" href="#evaluation">
+        <div class="snum">7</div>
+        <div class="slbl">shipped product decisions</div>
+        <h3>Agent evaluation research</h3>
+        <p>Showed that debugging and evaluating are two jobs owned by different people. The research shaped a new evaluation hub, the evaluation tab in the agent operations area, and criteria adopted by product, security and governance teams.</p>
+        <span class="go">Read the case study →</span>
+      </a>
+      <a class="star up" href="#outreach">
+        <div class="snum">3</div>
+        <div class="slbl">cultural shifts</div>
+        <h3>The Future of Enterprise</h3>
+        <p>Foresight research that became a UXR Days talk, a 4-day leadership workshop, a 3-day design sprint and an IIEX West keynote.</p>
+        <span class="go">See the talks →</span>
+      </a>
+      <a class="star dark up" href="#tools">
+        <div class="snum">★</div>
+        <div class="slbl">UserTesting ILLUMI Award 2026</div>
+        <h3>AI-first study automation</h3>
+        <p>A conversational agent that sets up and launches UserTesting studies. Microsoft won UserTesting's Innovation Catalyst Award for it.</p>
+        <span class="go">Watch the demo →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="work">
   <div class="wrap">
     <div class="head">
@@ -533,13 +587,13 @@ section { padding: 104px 0; }
           <p class="q">How do teams decide an AI agent is ready to ship? Research to define an agent evaluation product for no-code, low-code and pro-code builders.</p>
           <p class="role"><b>My role:</b> Co-led the discovery interviews; led the synthesis, the structure study and the readouts.</p>
         </div>
-        <div class="kpi"><div class="n">Adopted</div><div class="l">quality and safety criteria adopted by product, security and governance teams</div></div>
+        <div class="kpi"><div class="n">7 decisions</div><div class="l">shipped in the product, plus the design of two new evaluation surfaces</div></div>
       </div>
       <div class="pmii">
         <div><div class="label"><i>01</i>Problem</div><ul><li>Agents were entering business-critical work faster than teams could check them.</li></ul></div>
         <div><div class="label"><i>02</i>Method</div><ul><li>35 interviews across two studies, users and non-users.</li><li>Competitive IA review; 170+ jobs to be done.</li></ul></div>
         <div><div class="label"><i>03</i>Insight</div><ul><li>"What broke?" belongs to developers; "Is this acceptable?" to QA and experts.</li><li>Release decisions ran on consensus, not metrics.</li></ul></div>
-        <div><div class="label"><i>04</i>Impact</div><ul><li>Defined the evaluation controls; trace views prioritized for debugging.</li><li>Criteria adopted by product, security and governance.</li></ul></div>
+        <div><div class="label"><i>04</i>Impact</div><ul><li>7 shipped decisions, including separate Test and Evaluate surfaces and pass/fail ship signals instead of percentage scores.</li><li>Informed a new evaluation hub and the evaluation tab in the agent operations area.</li><li>Criteria adopted by product, security and governance.</li></ul></div>
       </div>
       <div class="gallery g1">
         <figure class="schematic">
