@@ -196,8 +196,11 @@ section { padding: 104px 0; }
 .flow { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 28px 34px; background: var(--cp-accent); color: var(--cp-accent-fg); }
 .flow div { display: flex; gap: 14px; align-items: center; font-size: 15.5px; }
 .flow b { width: 30px; height: 30px; flex: none; border-radius: 50%; background: var(--cp-accent-fg); color: var(--cp-accent); display: inline-flex; align-items: center; justify-content: center; font-size: 13px; }
-.demo { background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px; overflow: hidden; margin: -4px 0 20px; }
-.demo video { display: block; width: 100%; background: var(--cp-text); }
+.demo { background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px; overflow: hidden; margin: -4px 0 20px; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); grid-template-areas: "video tabs" "video cap"; grid-template-rows: auto 1fr; }
+.demo video { grid-area: video; display: block; width: 100%; background: var(--cp-text); align-self: center; }
+.demo .tabs { grid-area: tabs; flex-wrap: wrap; border-bottom: 0 !important; padding: 22px 24px 4px !important; }
+.demo .cap { grid-area: cap; flex-direction: column; justify-content: flex-start; padding: 10px 24px 22px !important; }
+.demo > .print-only { grid-area: video; }
 .demo .cap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 14px 20px; font-size: 14px; color: var(--cp-text-muted); }
 .demo .cap b { color: var(--cp-text); }
 .demo .print-only { display: none; }
@@ -293,6 +296,7 @@ section { padding: 104px 0; }
   .steps > div:nth-child(3)::before, .pmii > div:nth-child(3)::before { display: none; }
   .case-top { grid-template-columns: 1fr; }
   .case-title { padding: 26px 24px 20px; }
+  .demo { grid-template-columns: 1fr; grid-template-areas: "tabs" "video" "cap"; }
   .gallery.g2, .gallery.g3, .tool-grid, .fut-grid, .ph-row { grid-template-columns: 1fr; }
   .job { grid-template-columns: 1fr; gap: 2px; }
 }
