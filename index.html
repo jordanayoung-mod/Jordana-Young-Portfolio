@@ -418,6 +418,10 @@ section { padding: 104px 0; }
 .case .hero-img { height: 600px; }
 .case .hero-img > img { bottom: 190px; height: calc(100% - 218px); }
 
+.prob { display: flex; flex-direction: column; gap: 10px; }
+.prob > div { font-size: 14px; line-height: 1.45; }
+.prob b { display: block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--cp-accent); margin-bottom: 2px; }
+
 /* Motion */
 .up { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
 .up.in { opacity: 1; transform: none; }
@@ -580,7 +584,7 @@ section { padding: 104px 0; }
       </div>
       <div class="case-intro"><p class="role"><b>My role:</b> Co-led the discovery interviews; led the synthesis, the structure study and the readouts.</p></div>
       <div class="pmii">
-        <div><div class="label"><i>01</i>Problem</div><ul><li>Agents were entering business-critical work faster than teams could check them.</li></ul></div>
+        <div><div class="label"><i>01</i>Problem</div><div class="prob"><div><b>User problem</b>Builders had no reliable way to know if an agent was good enough to ship; failures surfaced in production.</div><div><b>Team's question</b>What evaluation capabilities matter most, and how should testing, evaluation and monitoring be structured for no-code to pro-code builders?</div></div></div>
         <div><div class="label"><i>02</i>Method</div><ul><li>35 interviews across two studies, users and non-users.</li><li>Competitive IA review; 170+ jobs to be done.</li></ul></div>
         <div><div class="label"><i>03</i>Insight</div><ul><li>"What broke?" belongs to developers; "Is this acceptable?" to QA and experts.</li><li>Release decisions ran on consensus, not metrics.</li></ul></div>
         <div><div class="label"><i>04</i>Impact</div><ul><li>7 shipped decisions, including separate Test and Evaluate surfaces and pass/fail ship signals instead of percentage scores.</li><li>Informed a new evaluation hub and the evaluation tab in the agent operations area.</li><li>Criteria adopted by product, security and governance.</li></ul></div>
@@ -606,7 +610,7 @@ section { padding: 104px 0; }
       </div>
       <div class="case-intro"><p class="role"><b>My role:</b> Lead researcher. Designed and ran the interviews and the 9,000-person choice study.</p></div>
       <div class="pmii">
-        <div><div class="label"><i>01</i>Problem</div><ul><li>One layout for every category; engineering needed variables to model.</li></ul></div>
+        <div><div class="label"><i>01</i>Problem</div><div class="prob"><div><b>User problem</b>Shoppers saw the same product details for every category, often not the ones that mattered to them.</div><div><b>Team's question</b>Which variables should a machine-learning model prioritize on the product page, and is a price guarantee worth building?</div></div></div>
         <div><div class="label"><i>02</i>Method</div><ul><li>12 in-depth interviews.</li><li>Discrete choice, n=9,000: 17 variables, 90 levels.</li></ul></div>
         <div><div class="label"><i>03</i>Insight</div><ul><li>3 fashion and 6 cross-category variables drive conversion.</li><li>Price guarantee did no better than the rest.</li></ul></div>
         <div><div class="label"><i>04</i>Impact</div><ul><li>Variables used to train the model behind a personalized product page.</li><li>Price guarantee feature dropped.</li></ul></div>
@@ -640,7 +644,7 @@ section { padding: 104px 0; }
       </div>
       <div class="case-intro"><p class="role"><b>My role:</b> Led the connectivity insights work. Designed and ran the Delhi interviews and combined them with platform and access point data.</p></div>
       <div class="pmii">
-        <div><div class="label"><i>01</i>Problem</div><ul><li>Usage far below forecast; a city partnership at stake.</li></ul></div>
+        <div><div class="label"><i>01</i>Problem</div><div class="prob"><div><b>User problem</b>People who wanted free Wi-Fi couldn't get through sign-up, and many women couldn't safely use the hotspots.</div><div><b>Team's question</b>Why is Delhi underperforming when other markets succeeded, and what will prove value to the city partner?</div></div></div>
         <div><div class="label"><i>02</i>Method</div><ul><li>In-depth interviews.</li><li>Usage data by gender; access point mapping.</li></ul></div>
         <div><div class="label"><i>03</i>Insight</div><ul><li>Sign-up asked for private ID and was hard on feature phones.</li><li>Hotspots were on the street, where women were less likely to go.</li></ul></div>
         <div><div class="label"><i>04</i>Impact</div><ul><li>Simpler, icon-led sign-up and Sign in with Facebook; access points moved toward homes.</li><li>Weekly registrations +36%.</li></ul></div>
@@ -660,7 +664,7 @@ section { padding: 104px 0; }
       </div>
       <div class="case-intro"><p class="role"><b>My role:</b> Global Head of User &amp; Consumer Insight. Led the ethnography within the global research program.</p></div>
       <div class="pmii">
-        <div><div class="label"><i>01</i>Problem</div><ul><li>High churn; earlier analysis had not found the cause.</li></ul></div>
+        <div><div class="label"><i>01</i>Problem</div><div class="prob"><div><b>User problem</b>People stopped refilling: gas swaps were a chore and the habit never formed.</div><div><b>Team's question</b>What is actually driving churn, after earlier analyses failed to find an actionable cause?</div></div></div>
         <div><div class="label"><i>02</i>Method</div><ul><li>In-home ethnography in a global qual and quant program.</li></ul></div>
         <div><div class="label"><i>03</i>Insight</div><ul><li>People want water cold: 2–3 bottles chilling, but only 1 shipped.</li><li>Empty cylinders were forgotten in car trunks.</li></ul></div>
         <div><div class="label"><i>04</i>Impact</div><ul><li>Patented quick-connect cylinder and valve, a new machine, 2 new factories.</li><li>Home delivery extended to more markets.</li></ul></div>
