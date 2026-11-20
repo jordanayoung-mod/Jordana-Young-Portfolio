@@ -500,7 +500,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
  .seal{left:auto;right:-6px;width:80px;height:80px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.a mark{transition:none;background-size:100% 100%}}
-.print-video-link{display:none}
+.print-video-link,.print-footer{display:none}
 @media print{
  @page{size:A4 landscape;margin:0}
  html{scroll-behavior:auto;scroll-padding-top:0}
@@ -514,11 +514,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
  .hero-grid{height:100%}
  .hero .cta{padding-bottom:0!important}
  .portfolio-carousel,.case-track{display:block;height:auto;overflow:visible}
- .portfolio-carousel .portfolio-page{height:210mm;break-before:page;break-inside:avoid}
+ .portfolio-carousel .portfolio-page{height:210mm;padding-bottom:32px;break-before:page;break-inside:avoid}
  .a mark{background-size:100% 100%}
  .feat .shot video{display:none}
  .print-video-link{display:block;text-decoration:none}
  .print-video-link span{display:block;padding:12px 16px;background:var(--cp-sun);color:var(--cp-ink);font-size:15px;font-weight:700}
+ .print-footer{display:block;position:fixed;bottom:6px;left:50%;transform:translateX(-50%);z-index:30;padding:2px 8px;border-radius:4px;background:var(--cp-paper);color:var(--cp-mute);font-size:10px;line-height:1.2;white-space:nowrap}
 }
 </style>
 </head>
@@ -969,6 +970,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 </section>
 </main>
 
+<div class="print-footer">Jordana Young. UX Research. 2026</div>
 
 <script>
 {
